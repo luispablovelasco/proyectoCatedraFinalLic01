@@ -1,12 +1,13 @@
 /**
-D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R
-D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R
-D.R		FUNCIONES GENERALES PARA EL CONTROL DEL MAPA ANIMADO SV
-D.R		JAVASCRIPT+JQUERY
-D.R		CONTROLES HOJAS DE ESTILOS CSS, CREADOR DE CONTENEDORES Y ANIMACIONES ESPECIFICAS
-D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R
-D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R_D.R
+FUNCIONES GENERALES PARA EL CONTROL DEL MAPA ANIMADO SV
+JAVASCRIPT+JQUERY
+CONTROLES HOJAS DE ESTILOS CSS, CREADOR DE CONTENEDORES Y ANIMACIONES ESPECIFICAS
 **/
+
+//Este JS se encarga de reaccionar por cada movimiento de mouse que el usuario realiza sobre el mapa, controla además el momento en que cada tarjeta de información de los departamentos se va a mostrar dependiendo de lo que el mouse del usuario este posicionado. 
+
+//Digamos, si el mouse del usuario esta posicionado sobre San Salvador este js llamará la respectiva tarjeta de información del departamento, y lo mostrara hasta que el usuario o quite el mouse del departamento o posicione el mouse sobre otro departamento, de igual manera si el mouse no esta posicionado en ningún departamento no se mostrará ninguna tarjeta de información 
+
 !function(a,b){"function"==typeof define&&define.amd?define(["jquery"],function(a){return b(a)}):"object"==typeof exports?module.exports=b(require("jquery")):b(jQuery)}(this,function(a){function b(a)
 {this.$container,this.constraints=null,this.__$departamentos_SV,this.__init(a)}function c(b,c){var d=!0;return a.each(b,function(a,e){return void 0===c[a]||b[a]!==c[a]?(d=!1,!1):void 0}),d}function d(b)
 {var c=b.attr("id"),d=c?h.window.document.getElementById(c):null;return d?d===b[0]:a.contains(h.window.document.body,b[0])}function e(){if(!g)return!1;var a=g.document.body||g.document.documentElement,b=a.style,
@@ -90,11 +91,13 @@ var f=!0;if("closed"==e.__state&&(e._trigger({type:"before",event:b,stop:functio
 c&&e.__callbacks.open.push(c),e.__callbacks.close=[],e.__timeoutsClear();var g,i=function(){"stable"!=e.__state&&e.__stateSet("stable"),a.each(e.__callbacks.open,function(a,b){b.call(e,e,{origin:e._$origin[0],tooltip:e._$departamentos_SV[0]})})
 ,e.__callbacks.open=[]};if("closed"!==e.__state)g=0,"disappearing"===e.__state?(e.__stateSet("appearing"),h.hasTransitions?(e._$departamentos_SV.clearQueue().removeClass("mapaSV-dying").addClass("mapaSV-show"),
 e.__options.animationDuration[0]>0&&e._$departamentos_SV.delay(e.__options.animationDuration[0]),e._$departamentos_SV.queue(i)):e._$departamentos_SV.stop().fadeIn(i)):"stable"==e.__state&&i();else{if(e.__stateSet("appearing"),
+
 g=e.__options.animationDuration[0],e.__contentInsert(),e.reposition(b,!0),h.hasTransitions?(e._$departamentos_SV.addClass("mapaSV-"+e.__options.animation).addClass("mapaSV-initial").css
 ({"-moz-animation-duration":e.__options.animationDuration[0]+"ms","-ms-animation-duration":e.__options.animationDuration[0]+"ms","-o-animation-duration":e.__options.animationDuration[0]+"ms",
 "-webkit-animation-duration":e.__options.animationDuration[0]+"ms","animation-duration":e.__options.animationDuration[0]+"ms","transition-duration":e.__options.animationDuration[0]+"ms"}),setTimeout(function()
 {"closed"!=e.__state&&(e._$departamentos_SV.addClass("mapaSV-show").removeClass("mapaSV-initial"),e.__options.animationDuration[0]>0&&e._$departamentos_SV.delay(e.__options.animationDuration[0]),e._$departamentos_SV.queue(i))},0)):e._$departamentos_SV.
 css("display","none").fadeIn(e.__options.animationDuration[0],i),e.__trackerStart(),a(h.window).on("resize."+e.__namespace+"-ventana_cerrada",function(a){e.reposition(a)}).on("scroll."+e.__namespace+"-ventana_cerrada",function(a)
+
 {e.__scrollHandler(a)}),e.__$originParents=e._$origin.parents(),e.__$originParents.each(function(b,c){a(c).on("scroll."+e.__namespace+"-ventana_cerrada",function(a){e.__scrollHandler(a)})}),e.__options.ventana_cerrada.mouseleave
 ||e.__options.ventana_cerrada.touchleave&&h.hasTouchCapability){e._on("dismissable",function(a){a.dismissable?a.delay?(m=setTimeout(function(){e._close(a.event)},a.delay),e.__timeouts.close.push(m)):e._close(a):clearTimeout(m)});
 var j=e._$origin,k="",l="",m=null;e.__options.interactive&&(j=j.add(e._$departamentos_SV)),e.__options.ventana_cerrada.mouseleave&&(k+="mouseenter."+e.__namespace+"-ventana_cerrada ",l+="mouseleave."+e.__namespace+"-ventana_cerrada "),

@@ -1,40 +1,16 @@
 
-/*Tarjeta de inf al hacer click*/
+/*Tarjeta de inf al pasar el mouser sobre*/
 .contenedor_exterior.tema_general .contenedor_secundario {
-  padding: 0;
+  padding: 15px;
   border-radius: 10px 10px 10px 10px;
   -o-border-radius: 10px 10px 10px 10px;
   -ms-border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
-  border-bottom: 5px solid #0267C1;
-  background: #45484d;
-  background: -ms-radial-gradient(
-    center,
-    ellipse cover,
-    #45484d 0%,
-    #000000 100%
-  );
-  background: -o-radial-gradient(
-    center,
-    ellipse cover,
-    #45484d 0%,
-    #000000 100%
-  );
-  background: -moz-radial-gradient(
-    center,
-    ellipse cover,
-    #45484d 0%,
-    #000000 100%
-  );
-  background: -webkit-radial-gradient(
-    center,
-    ellipse cover,
-    #45484d 0%,
-    #000000 100%
-  );
-  background: radial-gradient(ellipse at center, #45484d 0%, #000000 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=1 );
+  border: 2px solid black;
+  background: black;
+
+  background: (ellipse at center, #45484d 0%, #000000 100%);
   -webkit-box-shadow: 3px 11px 23px -6px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 3px 11px 23px -6px rgba(0, 0, 0, 0.75);
   box-shadow: 3px 11px 23px -6px rgba(0, 0, 0, 0.75);
