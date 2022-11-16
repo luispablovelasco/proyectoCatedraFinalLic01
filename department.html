@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Hojas de Estilos En Cascada (CSS) -->
+    <link rel="stylesheet" type="text/css" href="css/animaciones_mapaSV.css">
+    <!-- Fuentes Personalizadas -->
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="./css/department.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class=" header-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html" style="font-size: 40px;">El Salvador</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 20px;">
+                                Zonas departamentales
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item disabled" href="#" style="font-weight: bold;">Zona
+                                        Occidental</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="./department.html?name=ahuachapan">Ahuachapán</a></li>
+                                <li><a class="dropdown-item" href="./department.html?name=santa-ana">Santa Ana</a>
+                                </li>
+                                <li><a class="dropdown-item" href="./department.html?name=sonsonate">Sonsonate</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item disabled" href="#" style="font-weight: bold;">Zona
+                                        Central</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="./department.html?name=la-libertad">La
+                                        Libertad</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="./department.html?name=cabanias">Cabañas</a></li>
+                                <li><a class="dropdown-item"
+                                        href="./department.html?name=chalatenango">Chalatenango</a></li>
+                                <li><a class="dropdown-item" href="./department.html?name=cuscatlan">Cuscatlán</a>
+                                </li>
+                                <li><a class="dropdown-item" href="./department.html?name=san-salvador">San
+                                        Salvador</a></li>
+                                <li><a class="dropdown-item" href="./department.html?name=la-paz">La Paz</a></li>
+                                <li><a class="dropdown-item" href="./department.html?name=san-vicente">San
+                                        Vicente</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item disabled" href="#" style="font-weight: bold;">Zona
+                                        Oriental</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="./department.html?name=usulutan">Usulután</a>
+                                </li>
+                                <li><a class="dropdown-item" href="./department.html?name=san-miguel">San
+                                        Miguel</a></li>
+                                <li><a class="dropdown-item" href="./department.html?name=morazan">Morazán</a></li>
+                                <li><a class="dropdown-item" href="./department.html?name=la-union">La Unión</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <img src="" alt="">
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="imgBanner"></div>
+        <section class="card">
+            <h1>Datos históricos</h1>
+            <div id="datos"></div>
+        </section>
+        <section class="card">
+            <h1>Lista de municipios</h1>
+            <div class="row">
+                <div class="col"><img src="" id="imgMunicipios" alt="municipios"></div>
+                <div id="municipios" class="col"></div>
+            </div>
+        </section>
+        <section class="card">
+            <h1>Centros turísticos</h1>
+            <div id="turismo"></div>
+        </section>
+        <section class="card">
+            <h1>Ríos</h1>
+            <div id="rios"></div>
+        </section>
+        <section class="card">
+            <h1>Lagos</h1>
+            <div id="lagos"></div>
+        </section>
+        <section class="card">
+            <h1>Cerros y volcanes</h1>
+            <div id="cerros"></div>
+        </section>
+        <section class="card">
+            <h1>Personajes históricos</h1>
+            <div id="personajes"></div>
+        </section>
+        <section class="card">
+            <h1>Bandas musicales</h1>
+            <div id="bandas"></div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="./js/department-objects.js"></script>
+    <script src="./js/department.js"></script>
+</body>
+
+</html>
